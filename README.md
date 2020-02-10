@@ -4,7 +4,7 @@
 
 <p> Not complete, having trouble getting my API calls to work</p>
 <hr>
-<a href='https://finch23.github.io/Weather-Dashboard/.>https://finch23.github.io/Weather-Dashboard/.</a>
+<a href='https://finch23.github.io/Weather-Dashboard/.'>https://finch23.github.io/Weather-Dashboard/.</a>
 <hr>
 <h2>Screenshots</h2>
 <img src='images/weather.PNG'>
