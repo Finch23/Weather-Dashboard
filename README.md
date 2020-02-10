@@ -4,6 +4,8 @@
 
 <p> Not complete, having trouble getting my API calls to work</p>
 <hr>
+<
+<hr>
 <h2>Screenshots</h2>
 <img src='images/weather.PNG'>
-
+<img src='images/weather2.PNG'>
