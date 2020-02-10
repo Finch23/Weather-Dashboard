@@ -5,5 +5,5 @@
 <p> Not complete, having trouble getting my API calls to work</p>
 <hr>
 <h2>Screenshots</h2>
-
+<img src='images/weather.PNG>
 
