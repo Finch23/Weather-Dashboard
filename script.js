@@ -13,6 +13,7 @@ $(document).ready(function() {
             method: 'GET'
         }).then(function(response) {
             console.log(response);
+            console.log(response);
             var icon = response.weather[0].icon;
             $('.city').html('<h3>' + response.name + ' ' + "(" + dateTime + ")" + icon + '</h3>');
             var tempF = (response.main.temp) * 1.80 + 32;
@@ -20,37 +21,40 @@ $(document).ready(function() {
             $('.humidity').html('<p>Humidity: ' + response.main.humidity + '%</p>');
             $('.windspeed').html('<p>Wind speed: ' + response.wind.speed 
             + ' MPH</p>');
-            uvi = uvi + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon; 
+            var lat = response.coord.lat;
+            var lon = response.coord.lon;
             $.ajax({
                 url: fiveDay + searchTerm + '&appid=' + '5150c61f635c968ae048dcba10041960',
                 method: 'GET'
             }).then(function(five) {
                 console.log(five);
-                for(var i = 5; i <= five.list.length; i++) {
+                for(var i = 0; i <= 4; i++) {
                     var iconImg = five.list[i].weather[0].icon;
-                    var iconurl = "https://openweathermap.org/img/wn/" + iconImg + ".png";
-                    var imgIcon = $("<img>").attr("src", iconurl);
-                    var cardDiv = $("<div>").attr("class","card text-white bg-primary m-1");
-                    var cardHeader = $("<h5>").attr("class","card-header").text(five.list[i].dt);
-                    var cardBodyDiv =$("<div>").attr("class","card-body text-center");
-                    var fahrenheitTemp = Math.floor(five.list[i].main.temp * 1.80 +32);
-                    var temp = $("<h5>").attr("class", "card-text").html(fahrenheitTemp + '&#8457');
-                    var humidity = $("<p>").attr("class", "card-text").text("Humidity: " + five.list[i].main.humidity);
+                    var iconurl = 'https://openweathermap.org/img/wn/' + iconImg + '.png';
+                    var imgIcon = $('<img>').attr('src', iconurl);
+                    var cardDiv = $('<div>').attr('class','card text-white bg-warning m-1');
+                    var cardHeader = $('<h5>').attr('class','card-header').text(five.list[i].dt); //Convert unix time using moment
+                    var cardBodyDiv =$('<div>').attr('class','card-body text-center');
+                    var temp = five.list[i].main.temp * 1.8 + 32;
+                    var temp = $('<h5>').attr('class', 'card-text').html(temp.toFixed(0) + '&#8457');
+                    var humidity = $('<p>').attr('class', 'card-text').text('Humidity: ' + five.list[i].main.humidity + '%');
                     cardBodyDiv.append(imgIcon, temp, humidity);
                     cardDiv.append(cardHeader, cardBodyDiv);
-                    $("#forecast").append(cardDiv);   
+                    $('#forecast').append(cardDiv); 
                 }
             });
+            uviIndex(lat, lon);
         });
 
     });
 
-    function uviIndex() {
-        var uvi = 'https://api.openweathermap.org/data/2.5/uvi?appid=' + '5150c61f635c968ae048dcba10041960';
+    function uviIndex(lat, lon) {
+        var uvi = 'https://api.openweathermap.org/data/2.5/uvi?appid=5150c61f635c968ae048dcba10041960&lat=' + lat + '&lon=' + lon;
          $.ajax({
-             url: uvi,
+             url: uvi, 
              method: 'GET'
          }).then(function(res) {
+             console.log(res);
                 $('.uvIndex').html('<p>UV Index: ' + res.value + '</p>')
 
          });
