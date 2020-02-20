@@ -29,11 +29,12 @@ $(document).ready(function() {
             }).then(function(five) {
                 console.log(five);
                 for(var i = 0; i <= 4; i++) {
+                    var date = (five.list[i].dt);
                     var iconImg = five.list[i].weather[0].icon;
                     var iconurl = 'https://openweathermap.org/img/wn/' + iconImg + '.png';
                     var imgIcon = $('<img>').attr('src', iconurl);
                     var cardDiv = $('<div>').attr('class','card text-white bg-warning m-1');
-                    var cardHeader = $('<h5>').attr('class','card-header').text(five.list[i].dt); //Convert unix time using moment
+                    var cardHeader = $('<h5>').attr('class','card-header').text(moment(date[i]).format('L')); //Convert unix time using moment
                     var cardBodyDiv =$('<div>').attr('class','card-body text-center');
                     var temp = five.list[i].main.temp * 1.8 + 32;
                     var temp = $('<h5>').attr('class', 'card-text').html(temp.toFixed(0) + '&#8457');
