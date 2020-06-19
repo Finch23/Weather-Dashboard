@@ -5,19 +5,20 @@ h1 {
     padding: 10px;
 }
 
+body {
+    background-image: linear-gradient(to left, blue, green);
+}
+
 .mycont {
-    height: 600px;
-    background-color: lightgray;
-    width: 400px;
-    padding-right: 70px;
-    margin-right: 250px;
+    color: white;
+    font-size: 20px;
 }
 
 .mycont2 {
     height: 400px;
     width: 100%;
     border: 1px solid gray;
-    margin-left: 230px;
+    margin-left: 150px;
 }
 
 #btn {
@@ -27,4 +28,5 @@ h1 {
 
 h3 {
     margin-left: 210px;
+    color: white;
 }
