@@ -3,7 +3,10 @@
 
 
 ## Description
-This is a simple HTML, CSS, and JavaScript application that utilizes AJAX call's to pull information from the openweatherAPI. 
+This is a simple HTML, CSS, and JavaScript application that utilizes AJAX call's to pull information from the openweatherAPI.
+
+## Screenshot(s)
+<img src='./images/Capture.PNG' alt='screenshot'>
 
 ## Development setup
 
