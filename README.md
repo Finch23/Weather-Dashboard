@@ -1,10 +1,26 @@
-# Wheather-Dashboard
-<h2>Description</h2>
-<p>This application is going to be using AJAX and local storage to let the user choose a city they would like to see the forecast for. Once they search a city</p>
-<p> Not complete, having trouble getting my API calls to work</p>
-<hr>
-<a href='https://finch23.github.io/Weather-Dashboard/.'>https://finch23.github.io/Weather-Dashboard/.</a>
-<hr>
-<h2>Screenshots</h2>
-<img src='images/weather.PNG'>
-<img src='images/weather2.PNG'>
+# Weather Dashboard
+> The Weather Dashboard allows you to enter any city of your choice to view current weather conditions as well as the five day forecast.
+
+
+## Description
+This is a simple HTML, CSS, and JavaScript application that utilizes AJAX call's to pull information from the openweatherAPI. 
+
+## Development setup
+
+Clone the repo to your local machine. Run the browser.
+
+## Meta
+
+Nicholas Finch
+nicfinch223@gmail.com
+
+
+[https://github.com/finch23](https://github.com/finch23)
+
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
